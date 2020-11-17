@@ -4,7 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
-import geopandas as gpd
+#import geopandas as gpd
 import datetime
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
@@ -15,8 +15,8 @@ If you have any questions, checkout our [documentation](https://docs.streamlit.i
 forums](https://discuss.streamlit.io).
 
 """
-cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
-treesdf = gpd.read_file(cvilletrees)   
+#cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
+#treesdf = gpd.read_file(cvilletrees)   
 
 
 
