@@ -22,7 +22,12 @@ forums](https://discuss.streamlit.io).
 
 
 url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
-resp = requests.get(url)
+request = requests.get(url)
+
+requested_json_data = request.json()
+
+df = pd.DataFrame.from_dict(requested_json_data)
+st.markdown(df.index.tolist())
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
