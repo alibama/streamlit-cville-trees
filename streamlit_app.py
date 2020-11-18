@@ -32,7 +32,7 @@ forums](https://discuss.streamlit.io).
 
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
-df=df.rename(columns={"X": "lat", "Y": "lon"})
+df=df.rename(columns={"X": "lon", "Y": "lat"})
 st.map(df)
 # display  
 data_top = df.head()
