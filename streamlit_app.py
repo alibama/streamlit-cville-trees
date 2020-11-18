@@ -26,10 +26,14 @@ forums](https://discuss.streamlit.io).
 
 
 r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
-
 j = r.json()
 df = pd.DataFrame.from_dict(r)
-df
+#df
+
+data_top = df.head()  
+    
+# display  
+data_top  
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
