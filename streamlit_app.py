@@ -25,11 +25,12 @@ forums](https://discuss.streamlit.io).
 #request = requests.get(url)
 
 
-r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
-j = r.json()
-df = pd.DataFrame.from_dict(r)
-#df
+#r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
+#j = r.json()
+#df = pd.DataFrame.from_dict(r)
 
+
+df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 data_top = df.head()  
     
 # display  
