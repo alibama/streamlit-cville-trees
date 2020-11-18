@@ -24,9 +24,9 @@ forums](https://discuss.streamlit.io).
 url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 request = requests.get(url)
 
-requested_json_data = request.json()
+r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson').json()
 
-df = pd.DataFrame.from_dict(requested_json_data)
+df = pd.DataFrame.from_dict(r)
 df
 
 today = datetime.date.today()
