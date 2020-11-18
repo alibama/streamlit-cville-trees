@@ -25,7 +25,7 @@ forums](https://discuss.streamlit.io).
 #url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 #request = requests.get(url)
 zipfile = "zip::http://widget.charlottesville.org/gis/zip_download/planning_area.zip!planning_area_09_03_2020.shp"
-city_hoods=geopandas.read_file(zipfile)
+city_hoods=gpd.read_file(zipfile)
 #r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
 #j = r.json()
 #df = pd.DataFrame.from_dict(r)
