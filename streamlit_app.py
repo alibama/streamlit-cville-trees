@@ -27,7 +27,7 @@ request = requests.get(url)
 requested_json_data = request.json()
 
 df = pd.DataFrame.from_dict(requested_json_data)
-st.markdown(df.index.tolist())
+df
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
