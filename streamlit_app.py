@@ -5,7 +5,7 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
-#import geopandas as gpd
+import geopandas as gpd
 import datetime
 import json, requests, re
 """
