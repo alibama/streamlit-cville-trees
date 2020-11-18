@@ -47,9 +47,14 @@ if start_date < end_date:
 else:
     st.error('Error: End date must fall after start date.')
     
-
-map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [38.76, -78.4],
-    columns=['lat', 'lon'])
+map_data = df(
+    columns=['X', 'Y'])
 
 st.map(map_data)
+    
+    
+#map_data = pd.DataFrame(
+#    np.random.randn(1000, 2) / [50, 50] + [38.76, -78.4],
+#    columns=['lat', 'lon'])
+#
+#st.map(map_data)
