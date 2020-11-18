@@ -1,12 +1,13 @@
-!pip install geopandas
+#!pip install geopandas
 from collections import namedtuple
 import altair as alt
 import math
 import pandas as pd
 import streamlit as st
 import numpy as np
-import geopandas as gpd
+#import geopandas as gpd
 import datetime
+import json
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
 
@@ -20,6 +21,8 @@ forums](https://discuss.streamlit.io).
 #treesdf = gpd.read_file(cvilletrees)   
 
 
+with open("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson") as response:
+    grid = json.load(response)
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
