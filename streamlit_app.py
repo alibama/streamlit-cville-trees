@@ -21,8 +21,8 @@ forums](https://discuss.streamlit.io).
 #treesdf = gpd.read_file(cvilletrees)   
 
 
-url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
-request = requests.get(url)
+#url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
+#request = requests.get(url)
 
 r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson').json()
 
