@@ -7,7 +7,7 @@ import streamlit as st
 import numpy as np
 #import geopandas as gpd
 import datetime
-import json, requests
+import json, requests, re
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
 
@@ -24,8 +24,10 @@ forums](https://discuss.streamlit.io).
 #url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 #request = requests.get(url)
 
-r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson').json()
 
+r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
+
+j = r.json()
 df = pd.DataFrame.from_dict(r)
 
 today = datetime.date.today()
