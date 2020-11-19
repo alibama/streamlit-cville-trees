@@ -24,20 +24,21 @@ forums](https://discuss.streamlit.io).
 
 #url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 #request = requests.get(url)
-zipfile = "zip::http://widget.charlottesville.org/gis/zip_download/planning_area.zip!planning_area_09_03_2020.shp"
-city_hoods=gpd.read_file(zipfile)
+#zipfile = "zip::http://widget.charlottesville.org/gis/zip_download/planning_area.zip!planning_area_09_03_2020.shp"
+#city_hoods=gpd.read_file(zipfile)
 #r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
 #j = r.json()
 #df = pd.DataFrame.from_dict(r)
 
-
+#this is a stupid way to do things... pulling the data in as CSV and the renaming the columns... 
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
 df=df.rename(columns={"X": "lon", "Y": "lat"})
 st.map(df)
-# display  
 data_top = df.head()
 data_top  
+
+city = gpd.read_file("https://github.com/alibama/streamlit-example/blob/master/planning_area_09_03_2020.shp")
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
