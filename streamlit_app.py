@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import fiona
-import gdal
 import geopandas as gpd
 import datetime
 import json, requests, re
