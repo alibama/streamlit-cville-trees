@@ -18,8 +18,8 @@ If you have any questions, checkout our [documentation](https://docs.streamlit.i
 forums](https://discuss.streamlit.io).
 
 """
-#cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
-#treesdf = gpd.read_file(cvilletrees)   
+cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
+treesdf = gpd.read_file(cvilletrees)   
 
 
 #url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
@@ -34,7 +34,7 @@ forums](https://discuss.streamlit.io).
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
 df=df.rename(columns={"X": "lon", "Y": "lat"})
-st.map(df)
+st.map(treesdf)
 data_top = df.head()
 data_top  
 
