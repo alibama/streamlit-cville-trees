@@ -38,7 +38,12 @@ st.map(df)
 data_top = df.head()
 data_top  
 
-city = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
+
+test = gpd.read_file('https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp')
+inline_data = alt.InlineData(test.to_json())
+chart = alt.Chart(inline_data).mark_geoshape()
+st.altair_chart(chart)
+
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
