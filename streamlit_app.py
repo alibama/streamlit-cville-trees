@@ -38,7 +38,7 @@ st.map(df)
 data_top = df.head()
 data_top  
 
-city = gpd.read_file('https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp')
+city = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
 
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
