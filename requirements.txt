@@ -1,4 +1,7 @@
 altair
+urllib2
+zipfile
+StringIO
 pandas
 streamlit
 shapely
