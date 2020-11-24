@@ -23,7 +23,7 @@ Editing `/streamlit_app.py` customizes this app
 I'm using just pandas to read in the CSV from the equity map project at UVa
 this is a stupid way to do things with CSV files going through pandas... pulling the data in as CSV and the renaming the columns... 
 however it works and before i found out that geopandas would take files directly in here it was approach #1
-hi how are ya
+
 """
 
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
