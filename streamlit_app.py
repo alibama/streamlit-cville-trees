@@ -10,15 +10,6 @@ import requests
 import datetime
 import json, re
 
-#url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
-#request = requests.get(url)
-#b = bytes(request.content)
-#with fiona.BytesCollection(b) as f:
-#    crs = f.crs
-#    gdf = gpd.GeoDataFrame.from_features(f, crs=crs)
-#    print(gdf.head())
-
-
 
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
@@ -33,16 +24,10 @@ forums](https://discuss.streamlit.io).
 #cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
 #treesdf = gpd.read_file(cvilletrees)   
 
+"""
+this is a stupid way to do things with CSV files going through pandas... pulling the data in as CSV and the renaming the columns... 
+"""
 
-#url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
-#request = requests.get(url)
-#zipfile = "zip::http://widget.charlottesville.org/gis/zip_download/planning_area.zip!planning_area_09_03_2020.shp"
-#city_hoods=gpd.read_file(zipfile)
-#r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
-#j = r.json()
-#df = pd.DataFrame.from_dict(r)
-
-#this is a stupid way to do things... pulling the data in as CSV and the renaming the columns... 
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
 df=df.rename(columns={"X": "lon", "Y": "lat"})
@@ -50,14 +35,14 @@ st.map(df)
 data_top = df.head()
 data_top  
 
-zip_url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
-gdf3 = gpd.read_file(zip_url)
-gdf3
+"""
+https://gis.stackexchange.com/questions/225586/reading-raw-data-into-geopandas and then i read this fine manual and it's really simple to import shape files straight from zip in to geopandas
+"""
 
-#test = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
-#inline_data = alt.InlineData(test.to_json())
-#chart = alt.Chart(inline_data).mark_geoshape()
-#st.altair_chart(chart)
+zip_url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
+cvillehoods = gpd.read_file(zip_url)
+st.map(cvillehoods)
+
 
 
 today = datetime.date.today()
