@@ -50,6 +50,9 @@ st.map(df)
 data_top = df.head()
 data_top  
 
+zip_url = '"https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp'
+gdf3 = gpd.read_file(zip_url)
+gdf3
 
 #test = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
 #inline_data = alt.InlineData(test.to_json())
