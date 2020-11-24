@@ -11,7 +11,7 @@ import fiona
 #import shapefile
 import geopandas as gpd
 #from shapely.geometry import shape  
-import osr
+#import osr
 import datetime
 import json, requests, re
 """
