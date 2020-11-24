@@ -10,13 +10,13 @@ import requests
 import datetime
 import json, re
 
-url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
-request = requests.get(url)
-b = bytes(request.content)
-with fiona.BytesCollection(b) as f:
-    crs = f.crs
-    gdf = gpd.GeoDataFrame.from_features(f, crs=crs)
-    print(gdf.head())
+#url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
+#request = requests.get(url)
+#b = bytes(request.content)
+#with fiona.BytesCollection(b) as f:
+#    crs = f.crs
+#    gdf = gpd.GeoDataFrame.from_features(f, crs=crs)
+#    print(gdf.head())
 
 
 
@@ -50,7 +50,7 @@ st.map(df)
 data_top = df.head()
 data_top  
 
-zip_url = 'https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp'
+zip_url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
 gdf3 = gpd.read_file(zip_url)
 gdf3
 
