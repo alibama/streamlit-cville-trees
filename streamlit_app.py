@@ -8,9 +8,9 @@ import fiona
 #from urllib2 import urlopen
 #from zipfile import ZipFile
 #from StringIO import StringIO
-import shapefile
+#import shapefile
 import geopandas as gpd
-from shapely.geometry import shape  
+#from shapely.geometry import shape  
 import osr
 import datetime
 import json, requests, re
