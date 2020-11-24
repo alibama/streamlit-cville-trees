@@ -50,7 +50,7 @@ st.map(df)
 data_top = df.head()
 data_top  
 
-zip_url = '"https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp'
+zip_url = 'https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp'
 gdf3 = gpd.read_file(zip_url)
 gdf3
 
