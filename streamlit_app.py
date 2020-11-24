@@ -5,9 +5,9 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import fiona
-from urllib2 import urlopen
-from zipfile import ZipFile
-from StringIO import StringIO
+#from urllib2 import urlopen
+#from zipfile import ZipFile
+#from StringIO import StringIO
 import shapefile
 import geopandas as gpd
 from shapely.geometry import shape  
