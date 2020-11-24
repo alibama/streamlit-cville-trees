@@ -5,15 +5,21 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import fiona
-#from urllib2 import urlopen
-#from zipfile import ZipFile
-#from StringIO import StringIO
-#import shapefile
 import geopandas as gpd
-#from shapely.geometry import shape  
-#import osr
+import requests
 import datetime
-import json, requests, re
+import json, re
+
+url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
+request = requests.get(url)
+b = bytes(request.content)
+with fiona.BytesCollection(b) as f:
+    crs = f.crs
+    gdf = gpd.GeoDataFrame.from_features(f, crs=crs)
+    print(gdf.head())
+
+
+
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
 Have a great day
