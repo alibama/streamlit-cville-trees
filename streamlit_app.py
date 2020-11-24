@@ -13,26 +13,24 @@ import json, re
 
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
-Have a great day
-hello
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+Editing `/streamlit_app.py` customizes this app
 
 """
-#cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
-#treesdf = gpd.read_file(cvilletrees)   
+
 
 """
+I'm using just pandas to read in the CSV from the equity map project at UVa
 this is a stupid way to do things with CSV files going through pandas... pulling the data in as CSV and the renaming the columns... 
+however it works and before i found out that geopandas would take files directly in here it was approach #1
+
 """
 
 df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
-df=df.rename(columns={"X": "lon", "Y": "lat"})
-st.map(df)
-data_top = df.head()
+trees=df.rename(columns={"X": "lon", "Y": "lat"})
+st.map(trees)
+data_top = trees.head()
 data_top  
 
 """
