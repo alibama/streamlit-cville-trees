@@ -9,7 +9,6 @@ import geopandas as gpd
 import requests
 import datetime
 import json, re
-import pygeos
 
 
 """
