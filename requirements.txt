@@ -8,4 +8,5 @@ shapely
 fiona
 pyproj
 gdal
+rtree
 geopandas
