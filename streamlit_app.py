@@ -19,9 +19,6 @@ import json, re
 
 trees=gpd.read_file("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 
-st.map(trees)
-data_top = trees.head()
-data_top  
 
 """
 https://gis.stackexchange.com/questions/225586/reading-raw-data-into-geopandas and then i read this fine manual and it's really simple to import shape files straight from zip in to geopandas
