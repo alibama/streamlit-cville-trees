@@ -39,7 +39,19 @@ https://gis.stackexchange.com/questions/225586/reading-raw-data-into-geopandas a
 
 zip_url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
 cvillehoods = gpd.read_file(zip_url)
+
+
+trees_in_hoods=gpd.sjoin(trees, cvillehoods, how="inner", op='intersects')
+
+test=trees_in_hoods.head()
+test
 #st.map(cvillehoods)
+
+
+      
+
+
+
 
 
 
