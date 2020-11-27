@@ -26,7 +26,7 @@ however it works and before i found out that geopandas would take files directly
 
 """
 
-df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
+df=gpd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
 
 trees=df.rename(columns={"X": "lon", "Y": "lat"})
 st.map(trees)
