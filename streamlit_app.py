@@ -14,8 +14,7 @@ import json, re
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
 
-Editing `/streamlit_app.py` customizes this app
-aloha
+
 """
 
 trees=gpd.read_file("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
