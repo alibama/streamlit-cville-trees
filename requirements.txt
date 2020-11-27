@@ -9,4 +9,5 @@ fiona
 pyproj
 gdal
 rtree
+pygeos
 geopandas
