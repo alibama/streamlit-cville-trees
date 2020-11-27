@@ -18,17 +18,8 @@ Editing `/streamlit_app.py` customizes this app
 aloha
 """
 
+trees=gpd.read_file("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
 
-"""
-I'm using just pandas to read in the CSV from the equity map project at UVa
-this is a stupid way to do things with CSV files going through pandas... pulling the data in as CSV and the renaming the columns... 
-however it works and before i found out that geopandas would take files directly in here it was approach #1
-
-"""
-
-df=gpd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
-
-trees=df.rename(columns={"X": "lon", "Y": "lat"})
 st.map(trees)
 data_top = trees.head()
 data_top  
