@@ -11,7 +11,6 @@ import fiona
 #import shapefile
 import geopandas as gpd
 #from shapely.geometry import shape  
-import osr
 import datetime
 import json, requests, re
 """
@@ -43,10 +42,7 @@ data_top = df.head()
 data_top  
 
 
-test = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
-inline_data = alt.InlineData(test.to_json())
-chart = alt.Chart(inline_data).mark_geoshape()
-st.altair_chart(chart)
+
 
 
 today = datetime.date.today()
