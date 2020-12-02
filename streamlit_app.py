@@ -15,6 +15,13 @@ import datetime
 import json, requests, re
 """
 # Yet Another Cville Tree App!
+
+Pulling data from http://equity-atlas-uvalibrary.opendata.arcgis.com/
+
+and working on getting opendata.charlottesville.org working as well over here,
+https://share.streamlit.io/alibama/cville-trees/main but that's broken... maybe you want to help fix it?  email me at anson@virginia.edu or just fork the repo and send a link...
+
+
 """
 #cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
 #treesdf = gpd.read_file(cvilletrees)   
