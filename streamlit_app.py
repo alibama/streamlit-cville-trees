@@ -5,41 +5,48 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import fiona
+#from urllib2 import urlopen
+#from zipfile import ZipFile
+#from StringIO import StringIO
+#import shapefile
 import geopandas as gpd
-import requests
+#from shapely.geometry import shape  
+import osr
 import datetime
-import json, re
-
-
+import json, requests, re
 """
 # Welcome to The Cville Tree Commission Neighborhood Tree App!
-
-
+Have a great day
+hello
+Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
+forums](https://discuss.streamlit.io).
 """
-
-trees=gpd.read_file("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
-
-
-"""
-https://gis.stackexchange.com/questions/225586/reading-raw-data-into-geopandas and then i read this fine manual and it's really simple to import shape files straight from zip in to geopandas
-"""
-
-zip_url = 'http://widget.charlottesville.org/gis/zip_download/planning_area.zip'
-cvillehoods = gpd.read_file(zip_url)
+#cvilletrees = "https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson"
+#treesdf = gpd.read_file(cvilletrees)   
 
 
-trees_in_hoods=gpd.sjoin(trees, cvillehoods, how="inner", op='intersects')
+#url = ("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson")
+#request = requests.get(url)
+#zipfile = "zip::http://widget.charlottesville.org/gis/zip_download/planning_area.zip!planning_area_09_03_2020.shp"
+#city_hoods=gpd.read_file(zipfile)
+#r = requests.get('https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.geojson')
+#j = r.json()
+#df = pd.DataFrame.from_dict(r)
 
-test=trees_in_hoods.head()
-test
-#st.map(cvillehoods)
+#this is a stupid way to do things... pulling the data in as CSV and the renaming the columns... 
+df=pd.read_csv("https://opendata.arcgis.com/datasets/e7c856379492408e9543a25d684b8311_79.csv")
+
+df=df.rename(columns={"X": "lon", "Y": "lat"})
+st.map(df)
+data_top = df.head()
+data_top  
 
 
-      
-
-
-
-
+test = gpd.read_file("https://github.com/alibama/streamlit-example/raw/master/planning_area_09_03_2020.shp")
+inline_data = alt.InlineData(test.to_json())
+chart = alt.Chart(inline_data).mark_geoshape()
+st.altair_chart(chart)
 
 
 today = datetime.date.today()
